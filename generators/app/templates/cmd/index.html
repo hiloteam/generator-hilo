@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        #gameContainer{
+            width: 320px;
+            height: 400px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        #loading{
+            position: absolute;
+            width: 200px;
+            height: 400px;
+            line-height: 400px;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id='gameContainer'>
+        <div id='loading'>loading...</div>
+        <div id='stageContainer'></div>
+    </div>
+    <script src='src/js/seajs/sea.js'></script>
+    <script>
+    seajs.config({
+        base:'./',
+        paths:{
+            hilo:'src/js/hilo/hilo',
+            <%= name %>:'src/js/<%= name %>'
+        }
+    });
+    seajs.use('<%= name %>/game', function(game){
+        game.init(document.getElementById('stageContainer'));
+    });
+    </script>
+</body>
+</html>

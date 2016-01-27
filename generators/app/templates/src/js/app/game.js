@@ -40,7 +40,7 @@ var game = {
         var stage = this.stage = new Stage({
             width:320,
             height:400,
-            renderType:'webgl',
+            renderType:'canvas',
             container:this.stageContainer
         });
 

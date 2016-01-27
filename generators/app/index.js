@@ -1,13 +1,13 @@
 'use strict';
-var yeoman = require('yeoman-generator');
+var generator = require('yeoman-generator');
 var _ = require('lodash');
 var gulpTransformModule = require('gulp-transform-module');
 var gulpFilter = require('gulp-filter');
 require('colors');
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = generator.Base.extend({
   constructor: function () {
-    yeoman.generators.Base.apply(this, arguments);
+    generator.Base.apply(this, arguments);
     this.props = {};
   },
 
@@ -96,7 +96,7 @@ module.exports = yeoman.generators.Base.extend({
       copy('gitignore', '.gitignore');
 
       //index.html
-      copyTpl(this.props.moduleType + '/index.html', that.destinationPath('index.html'));
+      copyTpl('modules/' + this.props.moduleType + '/index.html', that.destinationPath('index.html'));
       //app js
       copyTpl('src/js/app/', 'src/js/' + this.props.name + '/');
       //hilo
@@ -105,14 +105,14 @@ module.exports = yeoman.generators.Base.extend({
       //module
       switch (that.props.moduleType) {
         case 'amd':
-          copy('amd/requirejs/', 'src/js/requirejs/');
+          copy('modules/amd/requirejs/', 'src/js/requirejs/');
           break;
         case 'cmd':
-          copy('cmd/seajs/', 'src/js/seajs/');
+          copy('modules/cmd/seajs/', 'src/js/seajs/');
           break;
         case 'commonjs':
-          copyTpl('commonjs/entry.js', 'src/js/entry.js');
-          copyTpl('commonjs/webpack.config.js', 'webpack.config.js');
+          copyTpl('modules/commonjs/entry.js', 'src/js/entry.js');
+          copyTpl('modules/commonjs/webpack.config.js', 'webpack.config.js');
           break;
       }
     },

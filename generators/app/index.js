@@ -71,7 +71,7 @@ module.exports = yeoman.generators.Base.extend({
     copy: function () {
       this.props.license = this.props.license || false;
 
-      var noTplPath = ['.gitignore', 'src/images'];
+      var noTplPath = ['src/images'];
       var tplPath = ['package.json', 'README.md'];
 
       var that = this;
@@ -91,6 +91,9 @@ module.exports = yeoman.generators.Base.extend({
       tplPath.forEach(function (path) {
         copyTpl(path);
       });
+
+      //gitignore
+      copy('gitignore', '.gitignore');
 
       //index.html
       copyTpl(this.props.moduleType + '/index.html', that.destinationPath('index.html'));

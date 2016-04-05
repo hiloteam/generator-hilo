@@ -1,6 +1,6 @@
 {
   "name": "generator-hilo",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A Hilo game project template created by yeoman generator",
   "homepage": "https://github.com/hiloteam/generator-hilo",
   "author": {
@@ -18,22 +18,22 @@
   "dependencies": {
     "colors": "^1.1.2",
     "generator-license": "~3.1.1",
-    "gulp-transform-module": "~2.1.1",
-    "gulp-filter": "^3.0.1",
-    "lodash": "~4.0.1",
+    "gulp-filter": "~4.0.0",
+    "gulp-transform-module": "~2.2.2",
+    "lodash": "~4.8.2",
     "through2": "~2.0.0",
     "yeoman-generator": "^0.22.5"
   },
   "devDependencies": {
-    "gulp": "^3.6.0",
+    "gulp": "~3.9.1",
     "gulp-coveralls": "^0.1.4",
-    "gulp-eslint": "^1.1.1",
+    "gulp-eslint": "~2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.10.3",
-    "gulp-mocha": "^2.0.0",
-    "gulp-nsp": "^2.1.0",
+    "gulp-mocha": "~2.2.0",
+    "gulp-nsp": "~2.4.0",
     "gulp-plumber": "^1.0.0",
-    "yeoman-assert": "^2.0.0",
+    "yeoman-assert": "~2.1.2",
     "yeoman-test": "^1.0.0"
   },
   "repository": "git@github.com:hiloteam/generator-hilo.git",

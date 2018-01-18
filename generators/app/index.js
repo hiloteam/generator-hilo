@@ -100,7 +100,7 @@ module.exports = generator.Base.extend({
       //app js
       copyTpl('src/js/app/', 'src/js/' + this.props.name + '/');
       //hilo
-      copy('src/js/hilo/' + that.props.moduleType + '/', 'src/js/hilo/');
+      copy('../../../hilo/build/' + that.props.moduleType + '/', 'src/js/hilo/');
 
       //module
       switch (that.props.moduleType) {

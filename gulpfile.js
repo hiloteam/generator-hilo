@@ -9,7 +9,12 @@ var nsp = require('gulp-nsp');
 var plumber = require('gulp-plumber');
 var coveralls = require('gulp-coveralls');
 
-gulp.task('static', function () {
+gulp.task('hilo', function(){
+  return gulp.src('hilo/build/**/*.js')
+    .pipe(gulp.dest('generators/app/templates/src/js/hilo'))
+});
+
+gulp.task('static', ['hilo'], function () {
   return gulp.src('generators/app/index.js')
     .pipe(excludeGitignore())
     .pipe(eslint())
@@ -21,7 +26,7 @@ gulp.task('nsp', function (cb) {
   nsp({package: path.resolve('package.json')}, cb);
 });
 
-gulp.task('pre-test', function () {
+gulp.task('pre-test', ['hilo'], function () {
   return gulp.src(['generators/app/index.js'])
     .pipe(istanbul({
       includeUntested: true

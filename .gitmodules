@@ -1,0 +1,3 @@
+[submodule "hilo"]
+	path = hilo
+	url = git@github.com:hiloteam/Hilo.git

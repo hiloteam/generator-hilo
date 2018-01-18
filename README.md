@@ -25,6 +25,19 @@ Run gulp for building your game
 * Provide Hilo script for multi-type modules
 * Optional - RequiresJS, SeaJS, KISSY, CommonJS support. Choice any module type of your favorite
 
+## Dev
+* init & update submodule
+
+    ```bash
+    git submodule init
+    git submodule update
+    ```
+
+* test
+    ```
+    npm run test
+    ```
+
 ## License
 
 MIT © [alibaba](www.alibaba.com)

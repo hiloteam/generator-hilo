@@ -1,6 +1,6 @@
 {
   "name": "generator-hilo",
-  "version": "1.1.7",
+  "version": "1.1.10",
   "description": "A Hilo game project template created by yeoman generator",
   "homepage": "https://github.com/hiloteam/generator-hilo",
   "author": {
@@ -39,7 +39,9 @@
   "repository": "git@github.com:hiloteam/generator-hilo.git",
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp",
+    "fetch":"git submodule foreach git pull",
+    "build":"npm run fetch && gulp"
   },
   "license": "MIT"
 }

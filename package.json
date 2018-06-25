@@ -38,7 +38,6 @@
   },
   "repository": "git@github.com:hiloteam/generator-hilo.git",
   "scripts": {
-    "prepublish": "gulp prepublish",
     "test": "gulp",
     "fetch":"git submodule foreach git pull",
     "build":"npm run fetch && gulp"
